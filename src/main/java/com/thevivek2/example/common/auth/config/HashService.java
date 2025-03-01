@@ -12,7 +12,7 @@ public class HashService {
 
     private final String authSecret;
 
-    public HashService(@Value("${tws.auth.secret}") String authSecret) {
+    public HashService(@Value("${thevivek2.auth.secret}") String authSecret) {
         this.authSecret = authSecret;
     }
 
