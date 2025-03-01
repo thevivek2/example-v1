@@ -5,7 +5,9 @@
 -> Rest API
 -> Request Param to Query Search
 -> WebSockets (Multicast & User, UserGroups restrictions)
--> Simple Authorization Config
+-> Authorization Config
+-> Database migration using Fluyway
+-> Spring Contract Verifier
 ~~~ 
 
 ## Getting started
