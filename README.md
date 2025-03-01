@@ -1,18 +1,17 @@
-# TMS_V2_API_Service
+# TheVivek2 Example 
 
 ## Getting started
 ~~~
 java 17.0.11
 maven 3.6.3
 mvn clean install
-java -jar .\target\trade-workstation-0.0.1-SNAPSHOT.jar
 http://localhost:8282/swagger-ui/index.html  -- Swagger UI 
 http://localhost:8282 -- UI connected via WebSocket
 ~~~
 
 ### Refresh SCOPE:
 POST http://localhost:8282/actuator/env
-{ "name":tws.testing.refreshable.beans.use, "value":"STATIC"}
+{ "name":thevivek2.testing.refreshable.beans.use, "value":"STATIC"}
 POST http://localhost:8282/actuator/refresh
 
 ### WS enabled UI
@@ -22,8 +21,6 @@ http://localhost:8282 - opens UI for WS testing
 http://localhost:8282/?TEST_INVALID_DESTINATION=true  - opens UI and this tries to subscribe 
 other user channel and that makes connection disconnected
 
-### Entity Search Options:
-<img src="lets-do-rest-based-entity-search.png" alt="HELLO" width="200" height="100">
 
 ### Search:
 http://localhost:8282/api/v2/orders?page=0&size=2&search=buyOrSell%3E1
@@ -42,5 +39,3 @@ http://localhost:8282/api/v2/client?page=0&size=1&sort=id,ASC&sort=activeStatus,
    
    Database migration file name should start from V...
 ~~~
-### Client fetch Example
-<img src="trade-workstation-client-fetch-example.png" alt="HELLO" width="200" height="100">
