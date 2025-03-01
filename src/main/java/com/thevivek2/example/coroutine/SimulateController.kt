@@ -19,7 +19,7 @@ open class SimulateController(@Autowired private val usrService: TheVivek2AuthSe
      * @return string
      */
     @GetMapping("/delay")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('SUPER_ADMIN')")
     suspend fun simulateDelay(): ServiceResponse<String> {
         val currentUser = usrService.getCurrentUser();
         delay(2000)
@@ -27,7 +27,7 @@ open class SimulateController(@Autowired private val usrService: TheVivek2AuthSe
     }
 
     @GetMapping("/unauthorizedAccess")
-    @PreAuthorize("hasRole('STORE.YCO')")
+    @PreAuthorize("hasRole('ROCKET')")
     suspend fun simulateInvalidAccess(): ServiceResponse<String> {
         val currentUser = usrService.getCurrentUser();
         delay(2000)

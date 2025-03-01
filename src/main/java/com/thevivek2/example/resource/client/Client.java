@@ -26,5 +26,10 @@ public class Client extends BaseEntity {
     @JoinColumn(name = "CLIENT_TYPE_ID")
     private ClientType clientType;
 
-
+    public static Client of(ClientDTO dto) {
+        Client client = new Client();
+        client.setContactNumber(dto.getContactNumber());
+        client.setEmailId(dto.getContactNumber());
+        return client;
+    }
 }

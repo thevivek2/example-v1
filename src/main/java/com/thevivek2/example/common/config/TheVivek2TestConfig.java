@@ -5,7 +5,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "workstation.testing")
+@ConfigurationProperties(prefix = "thevivek2.testing")
 @RefreshScope
 public class TheVivek2TestConfig {
 

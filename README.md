@@ -1,12 +1,19 @@
 # TheVivek2 Example 
 
-## Getting started
+## Getting started with Kotlin Coroutine, Rest APIS, WebSockets, Authorization
 ~~~
 java 17.0.11
 maven 3.6.3
 mvn clean install
+mvn clean install -DskipTests=true
+
+Go to target and run this command  !!>>
+java -jar example-v1-0.0.1-SNAPSHOT.jar --spring.profiles.active=INIT_CLIENT_DATA
+
+
 http://localhost:8282/swagger-ui/index.html  -- Swagger UI 
 http://localhost:8282 -- UI connected via WebSocket
+
 ~~~
 
 ### Refresh SCOPE:
@@ -36,6 +43,5 @@ http://localhost:8282/api/v2/client?page=0&size=1&sort=id,ASC&sort=activeStatus,
 ### if Database has objects (tables...), run this to create migration table
 ~~~
    system-patch/create_flyway.sql 
-   
    Database migration file name should start from V...
 ~~~

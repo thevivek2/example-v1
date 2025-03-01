@@ -2,9 +2,9 @@ package com.thevivek2.example.resource.client.jpa;
 
 import com.thevivek2.example.common.constant.Constants;
 import com.thevivek2.example.resource.client.Client;
-import com.thevivek2.example.resource.client.ClientDealerMasterJpa;
+import com.thevivek2.example.resource.client.ClientJpa;
 import com.thevivek2.example.resource.client.ClientType;
-import com.thevivek2.example.resource.client.ClientTypeJpaRepository;
+import com.thevivek2.example.resource.client.ClientTypeJpa;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +14,12 @@ import java.time.LocalDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-class ClientDealerMasterJpaTest extends JpaTest {
+class ClientJpaTest extends JpaTest {
 
     @Autowired
-    private ClientTypeJpaRepository clientTypeJpa;
+    private ClientTypeJpa clientTypeJpa;
     @Autowired
-    private ClientDealerMasterJpa jpa;
+    private ClientJpa jpa;
 
     @BeforeEach
     void setUp() {

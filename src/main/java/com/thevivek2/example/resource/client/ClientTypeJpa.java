@@ -3,7 +3,7 @@ package com.thevivek2.example.resource.client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface ClientTypeJpaRepository extends JpaRepository<ClientType, Integer> {
+public interface ClientTypeJpa extends JpaRepository<ClientType, Integer> {
 
 
 }

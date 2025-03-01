@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
 @Component("defaultWebClient")
-public class DefaultWebClient implements TWSWebClient {
+public class DefaultWebClient implements TheVivek2WebClient {
 
     private final ObjectMapper mapper;
 

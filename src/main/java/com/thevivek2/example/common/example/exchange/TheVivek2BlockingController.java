@@ -1,6 +1,6 @@
 package com.thevivek2.example.common.example.exchange;
 
-import com.thevivek2.example.common.client.TWSWebClient;
+import com.thevivek2.example.common.client.TheVivek2WebClient;
 import com.thevivek2.example.common.client.HttpResponse;
 import com.thevivek2.example.common.config.TheVivek2TestConfig;
 import com.thevivek2.example.common.exception.ApiException;
@@ -21,12 +21,12 @@ import java.util.Map;
 @RefreshScope
 public class TheVivek2BlockingController {
 
-    private final TWSWebClient restClient;
+    private final TheVivek2WebClient restClient;
     private final TheVivek2TestConfig testConfig;
 
 
     public TheVivek2BlockingController(TheVivek2TestConfig testConfig,
-                                       TWSWebClient restClient) {
+                                       TheVivek2WebClient restClient) {
         this.testConfig = testConfig;
         this.restClient = restClient;
     }

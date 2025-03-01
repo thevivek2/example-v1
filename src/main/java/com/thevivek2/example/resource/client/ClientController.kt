@@ -88,8 +88,8 @@ class ClientController(
     }
 
     @PostMapping(CLIENT_API)
-    fun createOrUpdate(@RequestBody client: Client): ServiceResponse<Client> {
-        return ServiceResponse.of(clientRepo.save(client))
+    fun createOrUpdate(@RequestBody client: ClientDTO): ServiceResponse<Client> {
+        return ServiceResponse.of(clientRepo.save(Client.of(client)))
     }
 
 }

@@ -16,9 +16,9 @@ import java.util.Map;
 import static com.thevivek2.example.common.exception.ApiException.of;
 import static org.springframework.http.HttpStatus.*;
 
-public interface TWSWebClient {
+public interface TheVivek2WebClient {
 
-    Log LOGGER = LogFactory.getLog(TWSWebClient.class);
+    Log LOGGER = LogFactory.getLog(TheVivek2WebClient.class);
 
     default List<HttpStatusCode> successCodes() {
         return List.of(OK, CREATED, ACCEPTED, NOT_MODIFIED);

@@ -9,12 +9,9 @@ import lombok.Setter;
 public class ServiceResponse<T> {
     private String status;
     private T data;
-    private String level;
-    private String message;
 
     private ServiceResponse(String status, String message, T data) {
         this.status = status;
-        this.message = message;
         this.data = data;
     }
 

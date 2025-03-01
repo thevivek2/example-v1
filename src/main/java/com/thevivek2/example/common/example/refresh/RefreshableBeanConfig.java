@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RefreshScope
 @Data
-@ConfigurationProperties(prefix = "tws.testing.refreshable.beans")
+@ConfigurationProperties(prefix = "thevivek2.testing.refreshable.beans")
 public class RefreshableBeanConfig {
 
     private String use;
