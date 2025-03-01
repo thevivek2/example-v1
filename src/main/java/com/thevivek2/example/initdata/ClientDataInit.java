@@ -28,13 +28,14 @@ public class ClientDataInit {
     void createEntries() {
         log.info("**** creating few entries in DB ******");
         List<Integer> bootstrappingData = getThirtyThousand();
-        bootstrappingData.parallelStream().forEach(this::extracted);
+       // bootstrappingData.parallelStream().forEach(this::extracted);
+        bootstrappingData.stream().forEach(this::extracted);
         log.info("**** done creating few entries in DB ******");
     }
 
     private static List<Integer> getThirtyThousand() {
         List<Integer> pointers = new ArrayList<>();
-        for (int i = 0; i < 2_000; i++) {
+        for (int i = 0; i < 2_00; i++) {
             pointers.add(i);
         }
         return pointers;

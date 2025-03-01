@@ -14,8 +14,8 @@ public class OnMessageReceived extends AbstractOptical<TheVivek2Model> {
     @Override
     protected TheVivek2Model process(TheVivek2Model data) {
         data.setExecuteStatus(0);
-        data.setMessage("This is topic or a process - Never expected to fail." +
-                " This makes great user experience since we know when and what error happened.");
+        data.setEvent("CHATBOT");
+        data.setMessage(data.getMessage());
         return data;
     }
 

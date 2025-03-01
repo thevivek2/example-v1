@@ -10,37 +10,38 @@ public class ServiceResponse<T> {
     private String status;
     private T data;
 
-    private ServiceResponse(String status, String message, T data) {
+    private ServiceResponse(String status, T data) {
         this.status = status;
         this.data = data;
     }
 
     public static <T> ServiceResponse<T> of(T data) {
-        return new ServiceResponse<>("SUCCESS", null, data);
+
+        return new ServiceResponse<>("SUCCESS", data);
     }
 
-    public static <T> ServiceResponse<T> success(String message) {
-        return new ServiceResponse<>("SUCCESS", message, null);
+    public static <T> ServiceResponse<T> success() {
+        return new ServiceResponse<>("SUCCESS", null);
     }
 
-    public static <T> ServiceResponse<T> success(String message, T data) {
-        return new ServiceResponse<>("SUCCESS", message, data);
+    public static <T> ServiceResponse<T> success(T data) {
+        return new ServiceResponse<>("SUCCESS", data);
     }
 
-    public static <T> ServiceResponse<T> failure(String message) {
-        return new ServiceResponse<>("FAILURE", message, null);
+    public static <T> ServiceResponse<T> failure() {
+        return new ServiceResponse<>("FAILURE", null);
     }
 
-    public static <T> ServiceResponse<T> failure(String message, T data) {
-        return new ServiceResponse<>("FAILURE", message, data);
+    public static <T> ServiceResponse<T> failure(T data) {
+        return new ServiceResponse<>("FAILURE", data);
     }
 
     public static <T> ServiceResponse<T> dummy() {
-        return new ServiceResponse<>("SUCCESS", "This is dummy message", null);
+        return new ServiceResponse<>("SUCCESS", null);
     }
 
     public static <T> ServiceResponse<T> dummy(T data) {
-        return new ServiceResponse<>("SUCCESS", "This is dummy message", data);
+        return new ServiceResponse<>("SUCCESS", data);
     }
 
 }

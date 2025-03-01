@@ -104,7 +104,7 @@ public class UserEvent {
     private void onInvalidCommand(String commandAndInput, Principal user) {
         TheVivek2Model workStationModel = new TheVivek2Model();
         workStationModel.setCreatedBy(user.getName());
-        workStationModel.setMessage("You sent invalid command send to server.. please check ::" + commandAndInput);
+        workStationModel.setMessage(commandAndInput);
         errorHandler.execute(workStationModel);
     }
 

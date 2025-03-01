@@ -28,7 +28,7 @@ public class ControllerAdviceConfig extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ApiException.class)
     public ResponseEntity<ServiceResponse<Violation>> handle(ApiException ex) {
         logger.error(ex);
-        return ResponseEntity.badRequest().body(ServiceResponse.failure(ex.getMessage(), Violation.of(ex)));
+        return ResponseEntity.badRequest().body(ServiceResponse.failure(Violation.of(ex)));
     }
 
     @ApiResponse(responseCode = "403", description = "Error when request is made with invalid input",
@@ -37,7 +37,7 @@ public class ControllerAdviceConfig extends ResponseEntityExceptionHandler {
     public ResponseEntity<ServiceResponse<Violation>> handleInvalidAccess(InvalidAccessException ex) {
         logger.error(ex);
         return ResponseEntity.status(403)
-                .body(ServiceResponse.failure(ex.getMessage(), Violation.of(ex)));
+                .body(ServiceResponse.failure(Violation.of(ex)));
     }
 
 
@@ -48,7 +48,7 @@ public class ControllerAdviceConfig extends ResponseEntityExceptionHandler {
                                                                          HttpHeaders headers, HttpStatusCode status,
                                                                          WebRequest request) {
         logger.error(ex);
-        return ResponseEntity.badRequest().body(ServiceResponse.failure(ex.getMessage(), Violation.of(ex)));
+        return ResponseEntity.badRequest().body(ServiceResponse.failure(Violation.of(ex)));
     }
 
     @ApiResponse(responseCode = "400", description = "Error when request is made with invalid input",
@@ -58,7 +58,7 @@ public class ControllerAdviceConfig extends ResponseEntityExceptionHandler {
                                                                   HttpHeaders headers, HttpStatusCode status,
                                                                   WebRequest request) {
         logger.error(ex);
-        return ResponseEntity.badRequest().body(ServiceResponse.failure(ex.getMessage(), Violation.of(ex)));
+        return ResponseEntity.badRequest().body(ServiceResponse.failure( Violation.of(ex)));
     }
 
     @ApiResponse(responseCode = "400", description = "Error when request is made with invalid input",
@@ -68,7 +68,7 @@ public class ControllerAdviceConfig extends ResponseEntityExceptionHandler {
                                                                   HttpHeaders headers, HttpStatusCode status,
                                                                   WebRequest request) {
         logger.error(ex);
-        return ResponseEntity.badRequest().body(ServiceResponse.failure(ex.getMessage(), Violation.of(ex)));
+        return ResponseEntity.badRequest().body(ServiceResponse.failure(Violation.of(ex)));
     }
 
 
@@ -79,9 +79,9 @@ public class ControllerAdviceConfig extends ResponseEntityExceptionHandler {
         logger.error(exception);
         if (exception instanceof ApiException apiException) {
             return ResponseEntity.status(apiException.getStatusCode())
-                    .body(ServiceResponse.failure(exception.getMessage(), Violation.of(exception)));
+                    .body(ServiceResponse.failure(Violation.of(exception)));
         }
-        return ResponseEntity.status(500).body(ServiceResponse.failure(exception.getMessage(), Violation.of(exception)));
+        return ResponseEntity.status(500).body(ServiceResponse.failure( Violation.of(exception)));
     }
 
     @Override
