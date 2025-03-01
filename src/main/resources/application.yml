@@ -1,0 +1,11 @@
+springdoc:
+  group-configs:
+    - group: commons
+      display-name: Common APIS
+      packages-to-scan: com.thevivek2.example.common,com.thevivek2.example.coroutine
+    - group: clients
+      display-name: Client APIS
+      packages-to-scan: com.thevivek2.example.resource.client
+
+
+

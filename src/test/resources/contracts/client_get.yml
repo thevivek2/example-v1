@@ -1,0 +1,10 @@
+request:
+  method: GET
+  url: http://localhost:8282/api/v2/client
+  headers:
+    Content-Type: application/json
+    Authorization: Basic VG1zQWRtaW4xNzQwNjQ4NDkwMzA0OjEyMzQ1Njc4
+response:
+  status: 200
+  headers:
+    Content-Type: application/json
