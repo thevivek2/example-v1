@@ -24,7 +24,7 @@ class ClientController(
 ) {
 
     @GetMapping(CLIENT_API)
-    fun clientDealerMaster(
+    suspend fun clientDealerMaster(
         @Parameter(
             description = "Search query in the form of a string used to filter the results. "
                     + "The query is composed of key-value pairs with logical operators, such as `AND`, `OR`, `IN`, and comparison operators like `=`, `>`, `<`, etc.\n\n"
@@ -73,7 +73,7 @@ class ClientController(
     }
 
     @GetMapping(CLIENT_API_STRICT_EXAMPLE)
-    fun example(
+    suspend fun example(
         @Strict @SearchSpec spec: Specification<Client>?,
         @ParameterObject
         @Parameter(
@@ -88,7 +88,7 @@ class ClientController(
     }
 
     @PostMapping(CLIENT_API)
-    fun createOrUpdate(@RequestBody client: ClientDTO): ServiceResponse<Client> {
+    suspend fun createOrUpdate(@RequestBody client: ClientDTO): ServiceResponse<Client> {
         return ServiceResponse.of(clientRepo.save(Client.of(client)))
     }
 
