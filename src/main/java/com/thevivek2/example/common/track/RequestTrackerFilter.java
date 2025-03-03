@@ -18,11 +18,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.UUID;
 
-import static org.springframework.core.Ordered.HIGHEST_PRECEDENCE;
+import static org.springframework.core.Ordered.LOWEST_PRECEDENCE;
 
 @Service
 @AllArgsConstructor
-@Order(HIGHEST_PRECEDENCE)
+@Order(LOWEST_PRECEDENCE)
 public class RequestTrackerFilter extends OncePerRequestFilter {
 
     private static final Log logger = LogFactory.getLog(RequestTrackerFilter.class);

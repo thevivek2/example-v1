@@ -15,14 +15,14 @@ open class SimulateController(@Autowired private val usrService: TheVivek2AuthSe
 
     /**
      * Perfect Delay Simulate.
-     * This API has a fixed delay 2 SEC facilitating a delay in System
+     * This API has a fixed delay 50 SEC facilitating a delay in System
      * @return string
      */
     @GetMapping("/delay")
     @PreAuthorize("hasRole('SUPER_ADMIN')")
     suspend fun simulateDelay(): ServiceResponse<String> {
         val currentUser = usrService.getCurrentUser();
-        delay(2000)
+        delay(50000)
         return ServiceResponse.of("####RES### $currentUser");
     }
 

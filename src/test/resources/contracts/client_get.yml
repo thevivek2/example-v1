@@ -6,5 +6,3 @@ request:
     Authorization: Basic dGhldml2ZWsyOjAxMjM0NTY3ODk=
 response:
   status: 200
-  headers:
-    Content-Type: application/json
