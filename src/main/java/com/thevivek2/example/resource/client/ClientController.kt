@@ -6,6 +6,11 @@ import com.thevivek2.example.common.response.ServiceResponse
 import com.thevivek2.example.resource.client.ClientAPIs.CLIENT_API
 import com.thevivek2.example.resource.client.ClientAPIs.CLIENT_API_STRICT_EXAMPLE
 import io.swagger.v3.oas.annotations.Parameter
+import io.swagger.v3.oas.annotations.media.Content
+import io.swagger.v3.oas.annotations.media.ExampleObject
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.withContext
 import org.springdoc.core.annotations.ParameterObject
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
@@ -68,8 +73,10 @@ class ClientController(
                     + "- `sort`: Sorting criteria in the format `field,asc|desc` (e.g., `name,asc`).\n"
                     + "  - Multiple sorting parameters can be provided, e.g., `sort=name,asc&sort=createdAt,desc`."
         ) pageable: Pageable
-    ): ServiceResponse<Page<Client>> {
-        return ServiceResponse.of(clientQueryExecutor.findAll(spec, pageable))
+    ): ServiceResponse<Page<Client>> = coroutineScope {
+        withContext(Dispatchers.Default) {
+            ServiceResponse.of(clientQueryExecutor.findAll(spec, pageable))
+        }
     }
 
     @GetMapping(CLIENT_API_STRICT_EXAMPLE)
@@ -87,9 +94,23 @@ class ClientController(
         return ServiceResponse.of(clientQueryExecutor.findAll(spec, pageable))
     }
 
+
     @PostMapping(CLIENT_API)
-    suspend fun createOrUpdate(@RequestBody client: ClientDTO): ServiceResponse<Client> {
-        return ServiceResponse.of(clientRepo.save(Client.of(client)))
+    suspend fun createOrUpdate(
+        @io.swagger.v3.oas.annotations.parameters.RequestBody(
+            content = [Content(
+                mediaType =
+                    "application/json",
+                examples = [
+                    ExampleObject(name = "BASIC", value = CreateClientExampleData.EXAMPLE_1),
+                    ExampleObject(name = "GENERAL", value = CreateClientExampleData.EXAMPLE_2),
+                    ExampleObject(name = "DETAIL", value = CreateClientExampleData.EXAMPLE_3)]
+            )]
+        ) @RequestBody client: ClientDTO
+    ): ServiceResponse<Client> = coroutineScope {
+        withContext(Dispatchers.IO) {
+            ServiceResponse.of(clientRepo.save(Client.of(client)))
+        }
     }
 
 }

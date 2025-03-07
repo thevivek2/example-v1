@@ -53,7 +53,8 @@ public class ClientDataInit {
         client.setClientType(save);
         client.setContactNumber(i % 2 == 0 ? "(977)9841527953" : "+971566755481");
         client.setActiveStatus(i % 5 == 0 ? "A" : "I");
-        client.setEmailId("thevivek2" + i + "@gmail.com");
+        client.setEmail("thevivek2" + i + "@gmail.com");
+        client.setAddress("Bardiya "+ i + ",Nepal");
         return clientJpa.save(client);
     }
 

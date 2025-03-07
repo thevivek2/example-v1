@@ -8,7 +8,7 @@ public class ClientDTO {
 
     private String contactNumber;
 
-    private String emailId;
+    private String email;
 
 
 }

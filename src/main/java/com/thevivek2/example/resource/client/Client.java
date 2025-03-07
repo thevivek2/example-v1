@@ -13,23 +13,21 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate
 public class Client extends BaseEntity {
 
-    @Column(name = "ACCOUNT_TYPE")
-    private String accountType;
-
     @Column(name = "CONTACT_NUMBER")
     private String contactNumber;
 
-    @Column(name = "EMAIL_ID")
-    private String emailId;
+    @Column(name = "EMAIL")
+    private String email;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CLIENT_TYPE_ID")
     private ClientType clientType;
 
+    private String address;
+
     public static Client of(ClientDTO dto) {
         Client client = new Client();
         client.setContactNumber(dto.getContactNumber());
-        client.setEmailId(dto.getContactNumber());
         return client;
     }
 }

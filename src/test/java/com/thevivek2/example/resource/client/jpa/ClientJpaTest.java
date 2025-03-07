@@ -36,9 +36,8 @@ class ClientJpaTest extends JpaTest {
 
     private static Client sample() {
         Client clientDealerMaster = new Client();
-        clientDealerMaster.setAccountType("accountType");
         clientDealerMaster.setAddedDate(LocalDateTime.now());
-        clientDealerMaster.setEmailId("vivek.adhikari@esharesolution.com");
+        clientDealerMaster.setEmail("vivek.adhikari@esharesolution.com");
         return clientDealerMaster;
     }
 
