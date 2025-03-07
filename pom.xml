@@ -144,6 +144,7 @@
         </dependency>
       <!--   Since flyway doesnt support H2
       DBSql can be placed inside resources/db/migration/v1
+      For not empty db - create flyway table manually located at system-patch
       <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-sqlserver</artifactId>

@@ -27,8 +27,9 @@ Thevivek2:0123456789
 ~~~
 ## Few Screens 
 
-<img src="this-is-cool.png" width="576" height="500">
-<img src="on-message.png" width="1000" height="500">
+<img src="this-is-cool.png">
+<img src="examples.png">
+<img src="on-message.png">
 
 
 ### Refresh SCOPE... :

@@ -5,10 +5,9 @@ import lombok.Data;
 @Data
 public class ClientDTO {
 
-
     private String contactNumber;
-
     private String email;
+    private String address;
 
 
 }
