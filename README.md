@@ -6,7 +6,7 @@
 -> Request Param to Query Search
 -> WebSockets (Multicast & User, UserGroups restrictions)
 -> Authorization Config
--> Database migration using Fluyway
+-> Database migration using Flyway
 -> Spring Contract Verifier
 ~~~ 
 
