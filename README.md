@@ -10,6 +10,8 @@
 -> Spring Contract Verifier
 ~~~ 
 
+[![EXAMPLE-V1](example.png)](https://youtu.be/DoihkdCkP48)
+
 ## Getting started
 ~~~
 java 17.0.11
